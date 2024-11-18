@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <script>
+        function viewDashboard(dashboardId) {
+            console.log('Viewing dashboard with ID:', dashboardId);
+
+
+            fetch('/generate_token', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ dashboardId })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Received token:', data.token);
+
+                if (data.token) {
+                    const iframeUrl = `<%= MB_SITE_URL %>/embed/dashboard/${data.token}#bordered=true&titled=true`;
+                    // window.open(iframeUrl, '_blank');
+                    document.getElementById('dashboardFrame').src = iframeUrl;
+                } else {
+                    alert('Failed to generate token');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error generating token');
+                
+            });
+        }
+
+        function checkSession() {
+            fetch('/check_session')
+                .then(response => response.json())
+                .then(data => {
+                    if (!data.valid) {
+                        alert("Your session has expired. Please log in again.");
+                        window.location.href = "/login";
+                    }
+                })
+                .catch(error => {
+                    console.error('Error checking session:', error);
+                });
+        }
+
+        setInterval(checkSession, 5000); // Check session every 5 second
+    </script>
+</head>
+<nav>
+    <ul>
+        <li><a class="uni" href="https://du.ac.in">University of Delhi</a></li>
+        <li><a class="menu" href="/">Home</a></li>
+        <li><a class="menu" href="/logout">Logout</a></li>
+    </ul>
+</nav>
+<body class="alg">
+    <link rel="stylesheet" href="styles.css">
+
+    <img src="dulogo.png" alt="Company Logo" class="logo">
+    <h1>Welcome, <%= username %></h1>
+    <h2>Select Dashboard to View</h2>
+    <button onclick="viewDashboard(1)">View Public DU Dashboard</button>
+    <button onclick="viewDashboard(66)">View Student Details Dashboard</button>
+    <!-- <a href="/profile" class="profile-button">Profile</a> -->
+    <!-- <button onclick="viewDashboard(34)">View Detailed Student Info Dashboard</button> -->
+    <iframe id="dashboardFrame" style="width: 100%; height: 950px; border: none;"></iframe>
+    
+</body>
+</html>

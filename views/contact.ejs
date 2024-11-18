@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Us - DU Dashboard Portal</title>
+</head>
+<nav>
+    <ul>
+        <li><a class="uni" href="https://du.ac.in">University of Delhi</a></li>
+        <li><a class="menu" href="/">Home</a></li>
+        <li><a class="menu" href="/login">Login</a></li>
+        <li><a class="menu" href="/contact">Contact</a></li>
+    </ul>
+</nav>
+<body class="alg">
+    <link rel="stylesheet" href="styles.css">
+    <img src="dulogo.png" alt="Company Logo" class="logo">
+    <h1>Contact Us</h1>
+    <p class="texts">For any inquiries or support, please reach out to us using the following contact details:</p>
+    <div class="contact-info">
+        <p><strong>Email:</strong> support@du.ac.in</p>
+        <p><strong>Phone:</strong> +91 123 456 7890</p>
+        <p><strong>Address:</strong></p>
+        <p>University of Delhi,</p>
+        <p>New Delhi, Delhi 110007, India</p>
+    </div>
+    <br><br>
+    <% if (!userId) { %>
+        <a class="logins-button" href="/login">Login to Continue</a>
+    <% } else { %>
+        <a class="suc" href="/signed_dashboard">Go to my Dashboard</a>
+        <br><a class="logout-button" href="/logout">Logout</a>
+    <% } %>
+</body>
+</html>

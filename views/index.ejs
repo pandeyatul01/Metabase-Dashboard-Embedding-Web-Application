@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Metabase Embedding</title>
+</head>
+<nav>
+
+    <ul>
+      <li><a class = "uni" href = "https://du.ac.in"> University of Delhi  </a></li> 
+      <li><a class = "menu" href= "/">Home</a></li> 
+      <li><a class = "menu" href="/login">Login</a></li>
+      <!-- <li><a class = "menu" href="/register.html">Register</a></li> -->
+      <li><a class= "menu" href="/contact">Contact</a></li>
+    </ul>
+  </nav>
+  
+<body class = "alg">
+    
+<link rel="stylesheet"  href="styles.css">
+<img src="dulogo.png" alt="Company Logo" class="logo">
+    <h1>Welcome to DU Dashboard Portal</h1>
+    <p class = "texts"> This is a web application with a secure login system and embedded Metabase dashboards<br>
+        This application will provide users with visual insights into our data while maintaining  data <br> security through user authentication</p> <br> <br>
+    
+    <% if (!userId) { %>
+        <a class="logins-button" href="/login">Login to Continue  </a>
+    <% } else { %>
+        <a class= "suc" href="/signed_dashboard">Go to my Dashboard  </a>
+        <br> <a class="logout-button" href="/logout"> Logout</a>
+    <% } %>
+</body>
+
+</html>
