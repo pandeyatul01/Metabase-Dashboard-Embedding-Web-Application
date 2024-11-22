@@ -53,24 +53,40 @@ The **Metabase Dashboard Embedding Web App** is a Node.js-based application that
 1. **Clone the repository**:  
    ```bash  
    git clone https://github.com/your-username/metabase-dashboard-webapp.git  
-   cd metabase-dashboard-webapp  
+   cd metabase-dashboard-webapp
+   ``` 
 
 2. **Install Dependencies**: 
    ```bash
    npm install
+   ```
 
 3. **Set up the environment variables**:
-  
-  ```bash
+  ```bash  
   DB_HOST=your-database-host  
   DB_USER=your-database-user  
   DB_PASSWORD=your-database-password  
   DB_NAME=your-database-name  
   MB_SITE_URL=your-metabase-site-url  
   MB_EMBEDDING_SECRET_KEY=your-metabase-secret-key  
+  ```
+4. **Start the Server**:
+  ```bash
+  npm start
+  ```
+5. **Access the app**:
+  ```bash
+  Visit http://localhost:3000 in your web browser.
+  ```
 
+## Usage
 
+Login: Use your username and password to log in.
+Dashboard Access:
+Students can view public dashboards.
+Admins can manage users and access all dashboards.
 
+##Screenshots
 
 
 
