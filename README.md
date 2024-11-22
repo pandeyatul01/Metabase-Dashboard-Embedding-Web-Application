@@ -32,9 +32,8 @@ The **Metabase Dashboard Embedding Web App** is a Node.js-based application that
 ## Project Structure  
 
 
-markdown
-Copy code
-├── index.js # Main server file
+
+- ├── index.js # Main server file
 ├── dbconfig.js # Database connection configuration
 ├── views/ # EJS templates for frontend
 │ ├── login.ejs
