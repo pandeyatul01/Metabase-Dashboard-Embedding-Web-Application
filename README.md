@@ -45,5 +45,16 @@ The **Metabase Dashboard Embedding Web App** is a Node.js-based application that
 - ├── package.json # Project dependencies
 - └── README.md # Project documentation
 
+  
+---
+
+## Setup Instructions  
+
+1. **Clone the repository**:  
+   ```bash  
+   git clone https://github.com/your-username/metabase-dashboard-webapp.git  
+   cd metabase-dashboard-webapp  
+
+
 
 
